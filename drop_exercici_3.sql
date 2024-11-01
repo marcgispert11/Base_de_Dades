@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS alumnes;
+DROP TABLE IF EXISTS matriculacio;
+DROP TABLE IF EXISTS professors;
+DROP TABLE IF EXISTS assignatures;
