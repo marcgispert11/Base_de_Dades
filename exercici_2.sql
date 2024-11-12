@@ -1,18 +1,17 @@
-CREATE DATABASE exercici_2;
-USE exercici_2;
+CREATE DATABASE exercici_2_2;
+USE exercici_2_2;
 
-CREATE TABLE mecanics (
-    dni CHAR(9),
-    nom VARCHAR(20),
-    edat TINYINT,
-    PRIMARY KEY (dni)
+CREATE TABLE clients (
+    dni CHAR(9) PRIMARY KEY,
+    nom VARCHAR(50),
+    direccio VARCHAR(50)
 );
 
-CREATE TABLE vehicles (
-    matricula VARCHAR(7),
-    propietari VARCHAR(20),
-    marca VARCHAR(20),
+CREATE TABLE pagaments_pendents (
+    codi INTEGER PRIMARY KEY AUTO_INCREMENT,
     dni CHAR(9),
-    PRIMARY KEY (matricula),
-    FOREIGN KEY (dni) REFERENCES mecanics (dni)
-)
+    import DOUBLE,
+    FOREIGN KEY (dni) REFERENCES clients (dni)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
